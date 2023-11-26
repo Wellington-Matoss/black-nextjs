@@ -13,7 +13,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   ).then((res) => res.json());
 
   return {
-    props: serverSideData,
+    props: { serverSideData },
   };
 };
 

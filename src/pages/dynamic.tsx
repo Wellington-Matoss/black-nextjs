@@ -1,5 +1,3 @@
-// pages/dynamic.tsx
-
 import { GetServerSideProps, NextPage } from "next";
 import { ReactNode, useEffect, useState } from "react";
 import { Col, Container, Row } from "reactstrap";
@@ -48,7 +46,7 @@ const Dynamic: NextPage = (props: {
         </Col>
 
         <Col>
-          <h3>Gerado no cliente: {clientSideData?.timestamp.toString()} </h3>
+          <h3>Gerado no cliente: {clientSideData?.timestamp.toString()}</h3>
         </Col>
       </Row>
     </Container>

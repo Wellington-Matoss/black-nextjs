@@ -1,7 +1,20 @@
-import { NextPage } from "next";
+import ProductsList from "@/components/ProductsList";
+import Header from "@/components/header";
+import { ProductType, fetchProducts } from "@/services/products";
+import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
+import { ReactNode } from "react";
+import { Container } from "reactstrap";
 
-const Products: NextPage = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  const products = await fetchProducts();
+  return { props: { products } };
+};
+
+const Products: NextPage = (props: {
+  children?: ReactNode;
+  products?: ProductType[];
+}) => {
   return (
     <>
       <Head>
@@ -10,7 +23,15 @@ const Products: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1>Nossos Produtos</h1>
+      <Header />
+
+      <main>
+        <Container className="mb-5">
+          <h1 className="my-5">Nossos Produtos</h1>
+
+          {<ProductsList products={props.products!} />}
+        </Container>
+      </main>
     </>
   );
 };

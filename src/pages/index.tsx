@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
-import Header from "@/components/header";
+import Header from "@/components/Header";
 import { Button, Container } from "reactstrap";
 import Link from "next/link";
 

@@ -9,7 +9,9 @@ const Header = () => {
       </Link>
       <Nav className="flex-row" navbar>
         <Link legacyBehavior href="/products" passHref>
-          <a className="nav-link me-2">Produtos</a>
+          <a className="nav-link me-2" style={{ paddingRight: 15 }}>
+            Produtos
+          </a>
         </Link>
         <Link legacyBehavior href="/cart" passHref>
           <a className="nav-link">Carrinho</a>
